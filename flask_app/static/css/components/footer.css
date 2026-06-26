@@ -1,0 +1,14 @@
+/* FOOTER */
+
+footer{
+    background:var(--primary-color);
+    color:var(--text-white);
+    padding:25px;
+    text-align:center;
+    margin-top:80px;
+}
+
+footer p{
+    color:white;
+    font-size:15px;
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}
+        Smart Lender
+        {% endblock %}
+    </title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <!-- Variables -->
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/core/variables.css') }}">
+
+    <!-- Reset -->
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/core/reset.css') }}">
+
+    <!-- Layout -->
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/core/layout.css') }}">
+
+    <!-- Navbar -->
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/components/navbar.css') }}">
+
+    <!-- Buttons -->
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/components/buttons.css') }}">
+
+    <!-- Cards -->
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/components/cards.css') }}">
+
+    <!-- Forms -->
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/components/forms.css') }}">
+
+    <!-- Tool Tips -->
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/components/tooltips.css') }}">
+
+    <!-- Footer -->
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/components/footer.css') }}">
+
+    <!-- Home -->
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/pages/home.css') }}">
+
+    <!-- Predict -->
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/pages/predict.css') }}">
+
+    <!-- Result -->
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/pages/result.css') }}">
+
+    <!-- Error -->
+    <link rel="stylesheet"
+    href="{{ url_for('static',filename='css/pages/error.css') }}">
+
+    <!-- About -->
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/pages/about.css') }}">
+
+    <!-- Responsive -->
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/responsive.css') }}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="{{ url_for('home') }}" class="logo">
+                Smart Lender
+            </a>
+            <ul class="nav-links">
+                <li>
+                    <a href="{{ url_for('home') }}">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('predict_page') }}">
+                        Predict
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('about') }}">
+                        About
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container">
+            <p>
+                © 2026 Smart Lender
+                AI Powered Loan Approval Prediction System
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+
+    <script src="{{ url_for('static', filename='js/formatter.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/validation.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/calculator.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/ui.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/predict.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/result.js') }}"></script>>
+
+</body>
+
+</body>
+
+</html>

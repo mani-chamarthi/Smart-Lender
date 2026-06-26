@@ -1,0 +1,76 @@
+/* ERROR PAGE */
+
+.error-page{
+    min-height:70vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 0;
+}
+
+/* ERROR CARD */
+
+.error-card{
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+    background:white;
+    padding:50px 40px;
+    border-radius:20px;
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+}
+
+/* ICON */
+
+.error-icon{
+    font-size:90px;
+    color:#DC2626;
+    margin-bottom:25px;
+}
+
+/* TITLE */
+
+.error-card h1{
+    color:#DC2626;
+    margin-bottom:15px;
+    font-size:42px;
+}
+
+/* MESSAGE */
+
+.error-message{
+    color:#475569;
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+/* DETAILS */
+
+.error-details{
+    background:#FEF2F2;
+    border-left:5px solid #DC2626;
+    padding:20px;
+    border-radius:10px;
+    text-align:left;
+    margin-bottom:30px;
+}
+
+.error-details h3{
+    color:#DC2626;
+    margin-bottom:10px;
+}
+
+.error-details p{
+    color:#991B1B;
+    word-break:break-word;
+}
+
+/* BUTTONS */
+
+.secondary-btn{
+    background:#64748B;
+}
+
+.secondary-btn:hover{
+    background:#475569;
+}

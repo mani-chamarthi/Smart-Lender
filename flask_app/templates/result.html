@@ -1,0 +1,301 @@
+{% extends "base.html" %}
+
+{% block title %}
+Prediction Result | Smart Lender
+{% endblock %}
+
+{% block content %}
+
+<section class="result-page">
+
+    <div class="container">
+
+        <!-- RESULT HEADER -->
+
+        <div class="result-header">
+
+            {% if prediction == "Approved" %}
+
+            <div class="status-card approved">
+
+                <i class="fa-solid fa-circle-check status-icon"></i>
+
+                <h1>Loan Approved</h1>
+
+                <p>
+                    Congratulations! Your loan application has been approved.
+                </p>
+
+            </div>
+
+            {% else %}
+
+            <div class="status-card rejected">
+
+                <i class="fa-solid fa-circle-xmark status-icon"></i>
+
+                <h1>Loan Rejected</h1>
+
+                <p>
+                    Sorry! Your loan application could not be approved.
+                </p>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+        <!-- AI DECISION SUMMARY -->
+
+        <div class="card">
+
+            <h2>
+
+                <i class="fa-solid fa-robot"></i>
+
+                AI Decision Summary
+
+            </h2>
+
+            <ul class="decision-list">
+
+                <li>{{ decision_1 }}</li>
+
+                <li>{{ decision_2 }}</li>
+
+                <li>{{ decision_3 }}</li>
+
+                <li>{{ decision_4 }}</li>
+
+            </ul>
+
+        </div>
+
+        <!-- INFORMATION GRID -->
+
+        <div class="result-grid">
+
+            <!-- Applicant -->
+
+            <div class="card">
+
+                <h2>
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Applicant Information
+
+                </h2>
+
+                <table class="info-table">
+
+                    <tr>
+
+                        <td>Dependents</td>
+
+                        <td>{{ dependents }}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Education</td>
+
+                        <td>{{ education }}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Employment</td>
+
+                        <td>{{ self_employed }}</td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <!-- Loan -->
+
+            <div class="card">
+
+                <h2>
+
+                    <i class="fa-solid fa-money-bill-wave"></i>
+
+                    Loan Information
+
+                </h2>
+
+                <table class="info-table">
+
+                    <tr>
+
+                        <td>Annual Income</td>
+
+                        <td>{{ income_annum }}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Loan Amount</td>
+
+                        <td>{{ loan_amount }}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Loan Term</td>
+
+                        <td>{{ loan_term }}</td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <!-- Assets -->
+
+            <div class="card">
+
+                <h2>
+
+                    <i class="fa-solid fa-building"></i>
+
+                    Asset Summary
+
+                </h2>
+
+                <table class="info-table">
+
+                    <tr>
+
+                        <td>Residential</td>
+
+                        <td>{{ residential_assets }}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Commercial</td>
+
+                        <td>{{ commercial_assets }}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Luxury</td>
+
+                        <td>{{ luxury_assets }}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Bank Assets</td>
+
+                        <td>{{ bank_assets }}</td>
+
+                    </tr>
+
+                    <tr class="total-row">
+
+                        <td>Total Assets</td>
+
+                        <td>{{ total_assets }}</td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <!-- Credit -->
+
+            <div class="card">
+
+                <h2>
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    Credit Profile
+
+                </h2>
+
+                <table class="info-table">
+
+                    <tr>
+
+                        <td>CIBIL Score</td>
+
+                        <td>{{ cibil_score }}</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Confidence</td>
+
+                        <td>{{ confidence }}</td>
+
+                    </tr>
+
+                </table>
+
+                <div class="progress">
+
+                    <div
+                        id="confidence-bar"
+                        class="progress-bar"
+                        data-confidence="{{ confidence }}">
+                    </div>
+                
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- BUTTONS -->
+
+        <div class="button-group">
+
+            <a
+                href="{{ url_for('predict_page') }}"
+                class="btn">
+
+                Predict Again
+
+            </a>
+
+            <a
+                href="{{ url_for('home') }}"
+                class="btn secondary-btn">
+
+                Back Home
+
+            </a>
+
+            <button
+                onclick="window.print()"
+                class="btn success-btn">
+
+                Print Result
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

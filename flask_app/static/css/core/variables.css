@@ -1,0 +1,43 @@
+:root{
+
+    /* Brand */
+    --primary-color:#1E3A8A;
+    --secondary-color:#2563EB;
+
+    /* Status */
+    --success-color:#16A34A;
+    --danger-color:#DC2626;
+    --warning-color:#F59E0B;
+
+    /* Background */
+    --background-color:#F8FAFC;
+    --card-color:#FFFFFF;
+
+    /* Text */
+    --text-color:#1F2937;
+    --text-light:#475569;
+    --text-white:#FFFFFF;
+
+    /* Border */
+    --border-color:#CBD5E1;
+
+    /* Hover */
+    --primary-hover:#1E40AF;
+
+    /* Shadow */
+    --shadow-sm:0 2px 6px rgba(0,0,0,.08);
+    --shadow-md:0 5px 20px rgba(0,0,0,.08);
+    --shadow-lg:0 10px 30px rgba(0,0,0,.15);
+
+    /* Radius */
+    --radius-sm:8px;
+    --radius-md:10px;
+    --radius-lg:15px;
+
+    /* Transition */
+    --transition:.3s ease;
+
+    /* Width */
+    --container-width:1200px;
+
+}

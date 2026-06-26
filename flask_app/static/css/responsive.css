@@ -1,0 +1,126 @@
+/* LARGE TABLETS */
+
+@media(max-width:992px){
+
+    .hero h1{
+        font-size:42px;
+    }
+}
+
+
+/* TABLETS */
+
+@media(max-width:768px){
+
+    .navbar .container{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .nav-links{
+        flex-direction:column;
+        gap:18px;
+    }
+
+    .hero{
+        padding:70px 20px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .steps{
+        grid-template-columns:1fr;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .result-grid{
+        grid-template-columns:1fr;
+    }
+
+    .status-card h1{
+        font-size:30px;
+    }
+
+    .status-icon{
+        font-size:60px;
+    }
+
+    .error-card{
+        padding:35px 25px;
+    }
+
+    .error-card h1{
+        font-size:32px;
+    }
+
+    .error-icon{
+        font-size:70px;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:576px){
+
+    .container{
+        width:95%;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .btn{
+        width:100%;
+        text-align:center;
+    }
+
+    .card{
+        padding:22px;
+    }
+
+}
+
+
+/* SMALL MOBILE */
+
+@media(max-width:400px){
+
+    .logo{
+        font-size:22px;
+    }
+
+    .hero h1{
+        font-size:24px;
+    }
+
+}
+
+/* ABOUT PAGE */
+
+@media(max-width:768px){
+
+    .about-hero h1{
+        font-size:36px;
+    }
+
+    .about-hero p{
+        font-size:16px;
+    }
+
+}
