@@ -224,39 +224,53 @@ Prediction Saved to Database
 
 ## Screenshots
 
-* Home Page
+## Screenshots
 
-    /screenshots/home_page_1.png
+### Home Page
 
-    /screenshots/home_page_2.png
+![Home Page 1](screenshots/home_page_1.png)
 
-* Prediction Form
+![Home Page 2](screenshots/home_page_2.png)
 
-    /screenshots/predict_page_1.png
+---
 
-    /screenshots/predict_page_2.png
+### Prediction Form
 
-* Result Page
+![Prediction Form 1](screenshots/predict_page_1.png)
 
-    /screenshots\result_page_1.png
+![Prediction Form 2](screenshots/predict_page_2.png)
 
-    /screenshots\result_page_2.png
+---
 
-* Registration Page
+### Result Page
 
-    /screenshots/registration_page.png
+![Result Page 1](screenshots/result_page_1.png)
 
-* Login Page
+![Result Page 2](screenshots/result_page_2.png)
 
-    /screenshots/login_page.png
+---
 
-* Dashboard
+### Registration Page
 
-    /screenshots/user_dashboard.png
+![Registration Page](screenshots/registration_page.png)
 
-* Admin Dashboard  
+---
 
-    /screenshots/admin_dashboard.png
+### Login Page
+
+![Login Page](screenshots/login_page.png)
+
+---
+
+### User Dashboard
+
+![User Dashboard](screenshots/user_dashboard.png)
+
+---
+
+### Admin Dashboard
+
+![Admin Dashboard](screenshots/admin_dashboard.png)
 
 ---
 
