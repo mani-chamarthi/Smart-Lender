@@ -82,6 +82,22 @@
     <!-- Responsive -->
     <link rel="stylesheet"
     href="{{ url_for('static', filename='css/responsive.css') }}">
+
+    <!-- Authentication -->
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/pages/auth.css') }}">
+
+    <!-- Dashboard -->
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/pages/dashboard.css') }}">
+
+    <!-- History -->
+    <link rel="stylesheet"
+    href="{{ url_for('static',filename='css/pages/history.css') }}">
+
+    <!-- Admin -->
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/pages/admin.css') }}">
 </head>
 
 <body>
@@ -90,34 +106,100 @@
 
     <nav class="navbar">
         <div class="container">
+    
             <a href="{{ url_for('home') }}" class="logo">
                 Smart Lender
             </a>
+    
             <ul class="nav-links">
-                <li>
-                    <a href="{{ url_for('home') }}">
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url_for('predict_page') }}">
-                        Predict
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url_for('about') }}">
-                        About
-                    </a>
-                </li>
-            </ul>
+
+                {% if current_user.is_authenticated %}
+
+                    <li>
+                        <a href="{{ url_for('home') }}">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ url_for('predict_page') }}">
+                            Predict
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ url_for('history') }}">
+                            History
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ url_for('dashboard') }}">
+                            Dashboard
+                        </a>
+                    </li>
+
+                    {% if current_user.role == "admin" %}
+                    <li>
+                        <a href="{{ url_for('admin_dashboard') }}">
+                            Admin
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    <li>
+                        <a href="{{ url_for('logout') }}">
+                            Logout
+                        </a>
+                    </li>
+
+                {% else %}
+
+                    <li>
+                        <a href="{{ url_for('login') }}">
+                            Login
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ url_for('register') }}">
+                            Register
+                        </a>
+                    </li>
+
+                {% endif %}
+
+    
         </div>
     </nav>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+
+            <div class="flash-container">
+                {% for category, message in messages %}
+                    <div class="flash-message flash-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+
+        {% endif %}
+    {% endwith %}
+
+    {% if current_user.is_authenticated %}
+    <div class="page-welcome">
+        <p>Welcome, <strong>{{ current_user.username }}</strong></p>
+    </div>
+    {% endif %}
 
     <!-- MAIN CONTENT -->
 
     <main class="container">
+
         {% block content %}
         {% endblock %}
+
     </main>
 
     <!-- FOOTER -->
@@ -145,9 +227,7 @@
 
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 
-    <script src="{{ url_for('static', filename='js/result.js') }}"></script>>
-
-</body>
+    <script src="{{ url_for('static', filename='js/result.js') }}"></script>
 
 </body>
 

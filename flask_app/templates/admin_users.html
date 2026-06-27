@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}
+Users | Smart Lender Admin
+{% endblock %}
+
+{% block content %}
+
+<section class="admin-section">
+
+<div class="section-header">
+    <h1>Registered Users</h1>
+    <p>Manage all Smart Lender users.</p>
+</div>
+
+<div class="table-container">
+
+    <table class="admin-table">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Joined</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for user in users %}
+
+            <tr>
+
+                <td>{{ user.id }}</td>
+
+                <td>{{ user.username }}</td>
+
+                <td>{{ user.email }}</td>
+
+                <td>
+
+                    {% if user.role == "admin" %}
+                        <span class="role-admin">
+                            Admin
+                        </span>
+                    {% else %}
+                        <span class="role-customer">
+                            Customer
+                        </span>
+                    {% endif %}
+
+                </td>
+
+                <td>
+                    {{ user.created_at.strftime('%d-%m-%Y') }}
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</section>
+
+{% endblock %}

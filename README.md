@@ -1,14 +1,8 @@
-# Smart Lender v1.0
+# Smart Lender v1.1
 
 An AI-powered Loan Approval Prediction System built using Machine Learning and Flask.
 
----
-
-## Overview
-
-Smart Lender is a web application that predicts whether a loan application is likely to be approved or rejected based on applicant financial information, credit score, and asset details.
-
-The system uses a trained Machine Learning model to analyze user input and provide instant loan approval predictions along with a confidence score.
+Smart Lender predicts whether a loan application is likely to be approved or rejected based on applicant financial details and credit history. The application includes authentication, role-based access control, prediction history, and an administrative dashboard.
 
 ---
 
@@ -16,42 +10,58 @@ The system uses a trained Machine Learning model to analyze user input and provi
 
 ### Machine Learning
 
-* Loan approval prediction using Machine Learning
+* Loan approval prediction using trained ML model
 * Confidence score generation
-* Multiple model evaluation and selection
-* Trained model persistence using Pickle
+* Data preprocessing and feature scaling
+* Serialized model loading using Pickle
 
-### Web Application
+### Authentication
 
-* Professional responsive user interface
-* Home page
-* Loan prediction page
-* Result page
-* Error handling page
-* About page
+* User Registration
+* User Login
+* Secure Password Hashing
+* Session Management
+* Logout Functionality
 
-### User Experience
+### Authorization
 
-* Real-time CIBIL score feedback
-* Automatic asset calculation
-* Indian currency formatting
-* Mobile, tablet, and desktop support
+* Role-Based Access Control (RBAC)
+* Customer Role
+* Admin Role
+* Protected Routes
+
+### Customer Features
+
+* Loan Prediction Form
+* Prediction Results Page
+* Personal Prediction History
+* Customer Dashboard
+
+### Admin Features
+
+* Admin Dashboard
+* User Management
+* Prediction Monitoring
+* System Statistics
+
+### Database
+
+* SQLite Database Integration
+* User Storage
+* Prediction Storage
+* User-Prediction Relationships
 
 ---
 
-## Technology Stack
-
-### Frontend
-
-* HTML5
-* CSS3
-* JavaScript
-* Font Awesome
+## Tech Stack
 
 ### Backend
 
 * Python
 * Flask
+* Flask-Login
+* Flask-SQLAlchemy
+* SQLite
 
 ### Machine Learning
 
@@ -59,12 +69,16 @@ The system uses a trained Machine Learning model to analyze user input and provi
 * Pandas
 * NumPy
 * XGBoost
-* Imbalanced-Learn
 
-### Development Tools
+### Frontend
 
-* Jupyter Notebook
-* VS Code
+* HTML5
+* CSS3
+* JavaScript
+* Jinja2 Templates
+
+### Version Control
+
 * Git
 * GitHub
 
@@ -76,97 +90,76 @@ The system uses a trained Machine Learning model to analyze user input and provi
 Smart-Lender/
 │
 ├── dataset/
-│   └── loan_approval_dataset.csv
-│
-├── notebooks/
-│   ├── 01_data_understanding.ipynb
-│   ├── 02_eda.ipynb
-│   ├── 03_data_preprocessing.ipynb
-│   └── 04_model_building_and_evaluation.ipynb
-│
 ├── models/
 │   ├── best_model.pkl
 │   └── scaler.pkl
 │
+├── notebooks/
+│
 ├── flask_app/
-│   ├── static/
-│   │   ├── css/
-│   │   └── js/
+│   ├── app.py
+│   ├── config.py
+│   ├── predictor.py
+│   ├── extensions.py
+│   ├── create_admin.py
+│   │
+│   ├── models/
+│   │   ├── user.py
+│   │   └── prediction.py
 │   │
 │   ├── templates/
-│   │   ├── base.html
-│   │   ├── index.html
-│   │   ├── predict.html
-│   │   ├── result.html
-│   │   ├── error.html
-│   │   └── about.html
-│   │
-│   ├── app.py
-│   ├── predictor.py
-│   ├── config.py
-│   └── requirements.txt
+│   └── static/
 │
-├── README.md
-├── .gitignore
-└── .hintrc
----
-
-## Machine Learning Workflow
-
-1. Data Collection
-2. Data Understanding
-3. Exploratory Data Analysis
-4. Data Preprocessing
-5. Feature Engineering
-6. Model Training
-7. Model Evaluation
-8. Model Selection
-9. Model Deployment
+├── requirements.txt
+└── README.md
+```
 
 ---
 
 ## Installation
 
-### Clone the repository
+### Clone Repository
 
 ```bash
-git clone https://github.com/your-username/Smart-Lender.git
+git clone <repository-url>
 cd Smart-Lender
 ```
 
-### Create virtual environment
+### Create Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-### Activate virtual environment
+### Activate Virtual Environment
 
-#### Windows
+Windows:
 
 ```bash
 venv\Scripts\activate
 ```
 
-#### Linux / macOS
+Linux / Mac:
 
 ```bash
 source venv/bin/activate
 ```
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Run the application
+---
+
+## Run Application
 
 ```bash
-python app.py
+python flask_app/app.py
 ```
 
-Open your browser and visit:
+Application URL:
 
 ```text
 http://127.0.0.1:5000
@@ -174,65 +167,128 @@ http://127.0.0.1:5000
 
 ---
 
-## Input Features
+## Default Admin Account
 
-The model uses the following features:
+Create admin account:
 
-* Number of Dependents
-* Education Level
-* Self Employment Status
-* Annual Income
-* Loan Amount
-* Loan Term
-* CIBIL Score
-* Residential Asset Value
-* Commercial Asset Value
-* Luxury Asset Value
-* Bank Asset Value
+```bash
+python flask_app/create_admin.py
+```
+
+Default credentials:
+
+```text
+Email: admin@smartlender.com
+Password: admin123
+```
+
+---
+
+## Application Workflow
+
+```text
+User Registration
+        ↓
+User Login
+        ↓
+Loan Application Input
+        ↓
+Feature Processing
+        ↓
+Model Prediction
+        ↓
+Result Generation
+        ↓
+Prediction Saved to Database
+```
+
+---
+
+## Roles and Permissions
+
+### Customer
+
+* Access Dashboard
+* Make Predictions
+* View Prediction History
+* Logout
+
+### Admin
+
+* Access Admin Dashboard
+* View All Users
+* View All Predictions
+* Monitor System Statistics
 
 ---
 
 ## Screenshots
 
-Add screenshots of:
-
 * Home Page
+
+    /screenshots/home_page_1.png
+
+    /screenshots/home_page_2.png
+
 * Prediction Form
-* Prediction Result
-* About Page
-* Error Page
 
-inside a `screenshots/` folder and reference them here.
+    /screenshots/predict_page_1.png
+
+    /screenshots/predict_page_2.png
+
+* Result Page
+
+    /screenshots\result_page_1.png
+
+    /screenshots\result_page_2.png
+
+* Registration Page
+
+    /screenshots/registration_page.png
+
+* Login Page
+
+    /screenshots/login_page.png
+
+* Dashboard
+
+    /screenshots/user_dashboard.png
+
+* Admin Dashboard  
+
+    /screenshots/admin_dashboard.png
 
 ---
 
-## Functional Features
+## Future Improvements
 
-### Smart Lender
+### v1.2
 
-* Loading animation
-* Prediction history
-* PDF report generation
+* Analytics Charts
+* Profile Management
+* Password Reset
+* Search and Filters
+* Export Reports
 
----
+### v2.0
 
-## Disclaimer
-
-Smart Lender provides predictions based on historical data and Machine Learning models. Final loan approval decisions should always be made by authorized financial institutions.
-
----
-
-## Version Information
-
-| Item         | Value        |
-| ------------ | ------------ |
-| Project Name | Smart Lender |
-| Version      | v1.0         |
-| Status       | Released     |
-| Release Year | 2026         |
+* REST API
+* React Frontend
+* PostgreSQL
+* Docker Deployment
+* Cloud Hosting
 
 ---
 
 ## Author
 
-Developed as an academic Machine Learning project using Python, Flask, and Scikit-Learn.
+**CHAMARTHI MANIKANTA**
+
+B.Tech CSM
+Raghu Engineering College
+
+---
+
+## License
+
+This project is developed for educational and learning purposes.

@@ -1,0 +1,97 @@
+.admin-dashboard {
+    padding: 2rem 0;
+}
+    
+.dashboard-header {
+    margin-bottom: 2rem;
+}
+    
+.admin-cards {
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 2rem;    
+}
+    
+.admin-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+    
+.admin-card h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+    
+.approved {
+    border-left: 6px solid green;
+}
+    
+.rejected {
+    border-left: 6px solid red;
+}
+    
+.admin-actions {
+    display: flex;
+    gap: 20px;
+}
+    
+.admin-section {
+    padding: 2rem 0;
+}
+        
+.table-container {
+    overflow-x: auto;
+    background: white;  
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+        
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+        
+.admin-table th,
+.admin-table td {
+    padding: 14px;
+    text-align: center;
+}
+        
+.admin-table tr {
+    border-bottom:
+    1px solid #eeeeee;
+}
+        
+.role-admin {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 6px 12px;
+    border-radius: 999px;
+}
+        
+.role-customer {
+    background: #dbeafe;
+    color: #1d4ed8;
+    padding: 6px 12px;
+    border-radius: 999px;
+}
+        
+.status-approved {
+    background: #d1fae5;
+    color: #065f46;
+    padding: 6px 12px;
+    border-radius: 999px;
+}
+        
+.status-rejected {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 6px 12px;
+    border-radius: 999px;
+}
+        

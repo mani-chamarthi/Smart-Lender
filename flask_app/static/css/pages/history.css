@@ -1,0 +1,56 @@
+.history-section {
+    padding: 2rem 0;
+}
+    
+.history-header {
+    margin-bottom: 2rem;
+}
+    
+.history-table-container {
+    overflow-x: auto;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+    
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+    
+.history-table th,
+.history-table td {
+    padding: 14px;
+    text-align: center;
+}
+    
+.history-table th {
+font-weight: 600;
+}
+    
+.history-table tr {
+    border-bottom:
+    1px solid #eeeeee;
+}
+
+.badge-approved {
+    background: #d1fae5;
+    color: #065f46;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.badge-rejected {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.empty-history {
+    text-align: center;
+    padding: 4rem;
+}

@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}
+Predictions | Smart Lender Admin
+{% endblock %}
+
+{% block content %}
+
+<section class="admin-section">
+
+<div class="section-header">
+
+    <h1>Prediction Records</h1>
+
+    <p>
+        View all loan predictions across the platform.
+    </p>
+
+</div>
+
+<div class="table-container">
+
+    <table class="admin-table">
+
+        <thead>
+
+            <tr>
+                <th>User ID</th>
+                <th>Loan Amount</th>
+                <th>CIBIL</th>
+                <th>Status</th>
+                <th>Confidence</th>
+                <th>Date</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for prediction in predictions %}
+
+            <tr>
+
+                <td>
+                    {{ prediction.user_id }}
+                </td>
+
+                <td>
+                    ₹{{ "{:,.0f}".format(
+                        prediction.loan_amount
+                    ) }}
+                </td>
+
+                <td>
+                    {{ prediction.cibil_score }}
+                </td>
+
+                <td>
+
+                    {% if prediction.prediction == "Approved" %}
+
+                        <span class="status-approved">
+                            Approved
+                        </span>
+
+                    {% else %}
+
+                        <span class="status-rejected">
+                            Rejected
+                        </span>
+
+                    {% endif %}
+
+                </td>
+
+                <td>
+                    {{ prediction.confidence }}%
+                </td>
+
+                <td>
+                    {{ prediction.created_at.strftime(
+                        '%d-%m-%Y'
+                    ) }}
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</section>
+
+{% endblock %}

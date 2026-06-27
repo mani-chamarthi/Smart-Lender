@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}
+Admin Dashboard | Smart Lender
+{% endblock %}
+
+{% block content %}
+
+<section class="admin-dashboard">
+
+<div class="dashboard-header">
+
+    <h1>
+        Admin Dashboard
+    </h1>
+
+    <p>
+        Smart Lender Analytics Overview
+    </p>
+
+</div>
+
+<div class="admin-cards">
+
+    <div class="admin-card">
+        <h2>{{ total_users }}</h2>
+        <p>Total Users</p>
+    </div>
+
+    <div class="admin-card">
+        <h2>{{ total_predictions }}</h2>
+        <p>Total Predictions</p>
+    </div>
+
+    <div class="admin-card approved">
+        <h2>{{ approved_loans }}</h2>
+        <p>Approved Loans</p>
+    </div>
+
+    <div class="admin-card rejected">
+        <h2>{{ rejected_loans }}</h2>
+        <p>Rejected Loans</p>
+    </div>
+
+    <div class="admin-card">
+        <h2>{{ approval_rate }}%</h2>
+        <p>Approval Rate</p>
+    </div>
+
+</div>
+
+<div class="admin-actions">
+
+    <a href="{{ url_for('admin_users') }}"
+       class="btn btn-primary">
+        Manage Users
+    </a>
+
+    <a href="{{ url_for('admin_predictions') }}"
+       class="btn btn-primary">
+        View Predictions
+    </a>
+
+</div>
+
+</section>
+
+{% endblock %}
